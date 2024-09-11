@@ -21,7 +21,7 @@ class MessageSpace extends Component{
             .catch(err=>console.log(err));
         }
 
-        const socket=OpenSocket('http://localhost:5000');
+        const socket=OpenSocket('https://6mgtfvcn-5000.uks1.devtunnels.ms/');
         socket.on('new message',data=>{
             this.addMessage(data.message);
         })
