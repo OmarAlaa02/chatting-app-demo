@@ -1,6 +1,8 @@
 import React , { Component } from 'react'
 import OpenSocket from 'socket.io-client';
 
+import './MessageSpace.css'
+
 class MessageSpace extends Component{
     constructor(){
         super()
@@ -38,7 +40,7 @@ class MessageSpace extends Component{
         
         const messages=[...this.state.messages];
         messages.push(message);
-        console.log(messages);
+        console.log('called with ' +message);
         this.setState({
             messages:messages
         })
@@ -50,9 +52,9 @@ class MessageSpace extends Component{
         
         if(messages.length)
             return(
-                <div>
+                <div className='message-space'>
                     {
-                        messages.map((message,index)=> <h1 key={index}>{message}</h1>)
+                        messages.map((message,index)=> <div className='msg-container' key={index}>{message}</div>)
                     }
                 </div>
             )
